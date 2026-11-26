@@ -12,7 +12,7 @@ se puede ver un resumen de los formularios de las sodas
 
 # URL publica de GitHub
 https://github.com/vivivargas91/sodas-trueno.git
-Local C:\Users\viviv\OneDrive\Escritorio\GitHub\sodas-trueno
+https://github.com/vivivargas91/sodas-trueno
 
 # API
 (https://jsonplaceholder.typicode.com/users ) carga los usuarios en el espacio de quien me acompañó 
