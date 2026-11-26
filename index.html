@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pasaporte de Sodas</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/storage.js" defer></script>
+  <script src="js/api.js" defer></script>
+  <script src="js/ui.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="encabezado">
+    <h1>Pasaporte de Sodas</h1>
+    <p>Sodas visitadas por Trueno</p>
+  </header>
+
+  <main class="principal">
+    <section class="panel" id="registro" aria-labelledby="titulo-registro">
+      <h2 id="titulo-registro">Registrar visita</h2>
+      <form id="form-visita" novalidate>
+        <div class="campo">
+          <label for="nombre">Nombre de la soda</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej. Soda La Central" aria-describedby="error-nombre">
+          <span class="error" id="error-nombre" role="alert"></span>
+        </div>
+
+        <div class="campo">
+          <label for="provincia">Provincia</label>
+          <select id="provincia" name="provincia" aria-describedby="error-provincia">
+            <option value="">Elegí una provincia</option>
+            <option value="San José">San José</option>
+            <option value="Alajuela">Alajuela</option>
+            <option value="Cartago">Cartago</option>
+            <option value="Heredia">Heredia</option>
+            <option value="Guanacaste">Guanacaste</option>
+            <option value="Puntarenas">Puntarenas</option>
+            <option value="Limón">Limón</option>
+          </select>
+          <span class="error" id="error-provincia" role="alert"></span>
+        </div>
+
+        <div class="campo">
+          <label for="plato">Plato que comió</label>
+          <input type="text" id="plato" name="plato" placeholder="Ej. Olla de Carne" aria-describedby="error-plato">
+          <span class="error" id="error-plato" role="alert"></span>
+        </div>
+
+        <div class="campo">
+          <label for="calificacion">Calificación (1 a 5 estrellas)</label>
+          <input type="number" id="calificacion" name="calificacion" min="1" max="5" step="1" aria-describedby="error-calificacion">
+          <span class="error" id="error-calificacion" role="alert"></span>
+        </div>
+
+        <div class="campo">
+          <label for="fecha">Fecha de la visita</label>
+          <input type="date" id="fecha" name="fecha" aria-describedby="error-fecha">
+          <span class="error" id="error-fecha" role="alert"></span>
+        </div>
+
+        <div class="campo">
+          <label for="compa">Quien me acompañó?</label>
+          <select id="compa" name="compa" disabled aria-describedby="aviso-compas">
+            <option value="">Cargando compas...</option>
+          </select>
+          <p class="aviso" id="aviso-compas" role="alert" hidden>No se pudieron cargar los compas; podés registrar la visita como "Fui solo".</p>
+        </div>
+
+        <div class="campo campo-check">
+          <input type="checkbox" id="volveria" name="volveria">
+          <label for="volveria">¿Repetiría la experiencia?</label>
+        </div>
+
+        <button type="submit" class="boton boton-principal">Registrar visita</button>
+      </form>
+    </section>
+
+    <section class="panel" id="pasaporte" aria-labelledby="titulo-pasaporte">
+      <h2 id="titulo-pasaporte">Mi pasaporte</h2>
+
+      <div class="resumen" id="resumen">
+        <p><span class="dato" id="total">0</span> sodas visitadas</p>
+        <p><span class="dato" id="promedio">—</span> calificación promedio</p>
+        <p><span class="dato" id="selladas">0 de 7</span> provincias visitadas</p>
+      </div>
+      <p class="completo" id="mensaje-completo" hidden>¡Pasaporte completado con las 7 provincias!!</p>
+
+      <div class="campo filtro">
+        <label for="filtro">Filtrar por provincia</label>
+        <select id="filtro" name="filtro">
+          <option value="Todas">Todas</option>
+          <option value="San José">San José</option>
+          <option value="Alajuela">Alajuela</option>
+          <option value="Cartago">Cartago</option>
+          <option value="Heredia">Heredia</option>
+          <option value="Guanacaste">Guanacaste</option>
+          <option value="Puntarenas">Puntarenas</option>
+          <option value="Limón">Limón</option>
+        </select>
+      </div>
+
+      <p class="vacio" id="mensaje-vacio" hidden></p>
+      <div class="tarjetas" id="lista-visitas"></div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>Práctica 12. Viviana Vargas Villalobos</p>
+  </footer>
+</body>
+</html>
