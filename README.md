@@ -16,3 +16,8 @@ Local C:\Users\viviv\OneDrive\Escritorio\GitHub\sodas-trueno
 
 # API
 (https://jsonplaceholder.typicode.com/users ) carga los usuarios en el espacio de quien me acompañó 
+
+#JS
+`js/api.js` Despues de llamar a la API devuelve los nombres de los compas de viaje. 
+`js/ui.js`  Actualizan el DOM y guarda la informacion del formulario
+`js/app.js` necesaria para que el formulario funcione 
